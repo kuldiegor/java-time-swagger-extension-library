@@ -10,6 +10,14 @@ Library to solve problem with java time in swagger doc with spring boot
 4. profit
 
 ## Add to project
+Add maven dependency
+```
+<dependency>
+    <groupId>com.kuldiegor</groupId>
+    <artifactId>java-time-swagger-extension-library</artifactId>
+    <version>1.1</version>
+</dependency>
+```
 In your project create a SwaggerConfig class
 
 in SwaggerConfig write like this code
@@ -23,8 +31,7 @@ public class SwaggerConfig {
                         new Info()
                                 .title(appName)
                                 .version(appVersion))
-                .components(swaggerHelper.getConfiguredComponents("com.example.your_entities_package",ZoneId.of("Europe/Moscow").getRules().getOffset(Instant.now()))
-                );
+                .components(swaggerHelper.getConfiguredComponents("com.example.your_entities_package"));
     }
 
     @Bean
