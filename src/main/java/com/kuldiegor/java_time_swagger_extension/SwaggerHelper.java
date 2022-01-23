@@ -77,8 +77,7 @@ public class SwaggerHelper {
 
     private Schema createDatetimeSchema(String formatPattern, String description) {
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(formatPattern);
-        Schema<String> offsetDatetime = new Schema<>();
-        offsetDatetime.setType("string");
+        CustomStringSchema offsetDatetime = new CustomStringSchema();
         offsetDatetime.setDescription(description);
         offsetDatetime.setExample(dateTimeFormatter.format(OffsetDateTime.now()));
         return offsetDatetime;
